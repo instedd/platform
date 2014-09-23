@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      InSTEDD Platform
+    </title>
+    <link href="bootstrap/css/bootstrap.min.css" media="all" rel="stylesheet" />
+    <link href="stylesheets/styles.css" media="all" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="javascripts/eventDispatcher.js"></script>
+    <script src="javascripts/invalidateElement.js"></script>
+    <script src="javascripts/platformApp.js"></script>
+    <script src="javascripts/platformCase.js"></script>
+    <script src="javascripts/platformRelation.js"></script>
+    <script src="javascripts/platformVisualization.js"></script>
+  </head>
+
+  <script>
+    var platform, tooltip, container;
+
+    var showApp = function(e) {
+      if (e.info.type == 'app') {
+        $('.cases div').hide();
+        $('#id' + e.info.id).show();
+      }
+    };
+
+    window.onload = function() {
+      var apps = [
+        {id:1, name:"Nuntium", icon:"images/nuntium.png"},
+        {id:2, name:"Local Gateway", icon:"images/local_gateway.png"},
+        {id:3, name:"Pollit", icon:"images/pollit.png"},
+        {id:4, name:"Remindem", icon:"images/remindem.png"},
+        {id:5, name:"Task Me Up", icon:"images/task_me_up.png"},
+        {id:6, name:"Veegilo", icon:"images/veegilo.png"},
+        {id:7, name:"Verboice", icon:"images/verboice.png"},
+        {id:8, name:"Resource Map", icon:"images/resource_map.png"},
+        {id:9, name:"Seentags", icon:"images/seentags.png"},
+        {id:10, name:"Riff", icon:"images/riff.png"},
+        {id:11, name:"Reporting Wheel", icon:"images/reporting_wheel.png"},
+        {id:12, name:"GeoChat", icon:"images/geochat.png"},
+        {id:13, name:"Mesh4x", icon:"images/mesh4x.png"}
+      ];
+      var cases = [
+        {id:1, relations:[{a:13, b:1}, {a:1, b:9}, {a:7, b:9}]},
+        {id:2, relations:[{a:1, b:4}, {a:1, b:9}, {a:10, b:13}, {a:5, b:7}, {a:7, b:10}, {a:1, b:13}, {a:1, b:9}, {a:1, b:9}]},
+        {id:3, relations:[{a:4, b:9}, {a:6, b:9}]},
+        {id:4, relations:[{a:2, b:3}, {a:3, b:10}, {a:10, b:13}, {a:2, b:10}]},
+        {id:5, relations:[{a:10, b:13}, {a:2, b:10}]},
+        {id:6, relations:[{a:2, b:8},{a:2, b:9}]}
+      ];
+      container = document.getElementById("platform");
+      platform = new PlatformVisualization(apps, cases, container);
+      platform.addEventListener("click", showApp);
+      window.platform = platform;
+    };
+  </script>
+
+  <body class='smallfooter noheader centred'>
+
+    <div class='wrapper'>
+      <div class='navbar top'>
+        <div class='navbar-inner'>
+          <div class='container-fluid'>
+            <div class='row-fluid'>
+              <div class='span3'>
+                <a href='#'>
+                  <img alt="Insteddplatform" class="brand" src="images/InSTEDDPlatform.png" />
+                </a>
+              </div>
+              <div class='span6 acenter'>
+              </div>
+              <div class='span3'>
+                <div class='pull-right'>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='app-header'>
+        <div class='container-fluid'>
+          <div class='row-fluid'>
+            <div class='span3'>
+              <a href='/'>
+                <img alt="Instedd Platfform" src="images/InSTEDDPlatform.png" />
+              </a>
+            </div>
+            <div class='span9'>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='content'>
+        <div class='container-fluid'>
+          <div class='homepage'>
+            <div class='row-fluid'>
+              <div class='span12'>
+                <h1>
+                  You make the world a better place.
+                  <br>
+                  We give you the toolkit to do it'
+                  <small>
+                    You make the world a better place.
+                    We give you the toolkit to do it
+                  </small>
+                </h1>
+              </div>
+            </div>
+            <div class='row-fluid'>
+              <div class='span12'>
+                <p>We have created an evolving platform of technology tools and services based on years of collaboration with our partners around the world. These tools are completely free and open source, and available for anyone wanting to use them to improve the social impact and scale of their work. All our tools can be tailored to individual needs and integrated with other existing tools. We are actively engaged with our user communities to further apply and enhance our tools and increase their impact.</p>
+              </div>
+            </div>
+            <div class='row-fluid main-img'>
+              <div class='span12'></div>
+              <img alt="Main home" src="images/main-home.png" />
+              <div class='onepager'>
+                <a class="button-icon " href="OnePager.pdf" target="_blank">
+                  <span class='btn-icon'>
+                        <i class='icf-pdf'></i>
+                  </span>
+                  <span>Download One-Pager pdf (1.15 MB)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <div class='cases'>
+            <div class='row-fluid' id='id1'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Nuntium</span>
+              </h1>
+              <p>Nuntium is a tool that allows anyone to build robust and scalable messaging applications.</p>
+            </div>
+            <div class='row-fluid' id='id2'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Local Gateway</span>
+              </h1>
+              <p>Watchfire is a recruitment and management software application that uses GPS, voice, and text messages improve rapid team coordination.</p>
+            </div>
+            <div class='row-fluid' id='id3'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Pollit</span>
+              </h1>
+              <p>Pollit is a simple open-source web application that allows the user to conduct surveys via text messages, which allows to easily scale the number of people reached and lets them answer anytime, anywhere.</p>
+            </div>
+            <div class='row-fluid' id='id4'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Remindem</span>
+              </h1>
+              <p>Remindem helps you keep people informed of important things going on in their life and work.</p>
+            </div>
+            <div class='row-fluid' id='id5'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Task Me Up</span>
+              </h1>
+              <p>TaskMeUp is an open-source crowdsourcing platform, that allows a user to setup feeds of incoming unstructured information and make use of communities of volunteers to process and organize the information, by defining an easily customizable process for each incoming piece of information.</p>
+            </div>
+            <div class='row-fluid' id='id6'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Veegilo</span>
+              </h1>
+              <p>Veegilo is a simple tool that helps you contain disease outbreaks faster by collecting information about cases in a simple and unified way.</p>
+            </div>
+            <div class='row-fluid' id='id7'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Verboice</span>
+              </h1>
+              <p>Voice is the most universal and inclusive means of communication, and it’s an ideal way to expand the reach and impact of health and humanitarian technologies.</p>
+            </div>
+            <div class='row-fluid' id='id8'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Resource Map</span>
+              </h1>
+              <p>Resource Map helps people track their work, resources and results geographically in a collaborative environment accessible from anywhere.</p>
+            </div>
+            <div class='row-fluid' id='id9'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Seentags</span>
+              </h1>
+              <p>Seentags is a service that helps extract accurate information from free text reports, without the need to set up any initial reporting structure.</p>
+            </div>
+            <div class='row-fluid' id='id10'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Riff</span>
+              </h1>
+              <p>Riff enables detection, prediction and response to health-related events (such as disease outbreaks or pandemics) through a collaborative environment that combines data exploration, integration, search and inferencing – providing more complex analysis and deeper insight.</p>
+            </div>
+            <div class='row-fluid' id='id11'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Reporting Wheel</span>
+              </h1>
+              <p>The Reporting Wheel is a simple paper-based tool designed for easily encoding information and allow for reporting structured-data bypassing literacy and technological challenges.</p>
+            </div>
+            <div class='row-fluid' id='id12'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>GeoChat</span>
+              </h1>
+              <p>GeoChat is a flexible open source group communications technology that lets team members interact to maintain shared geospatial awareness of who is doing what where over any device, on any platform, over any network.</p>
+            </div>
+            <div class='row-fluid' id='id13'>
+              <div class='span12'></div>
+              <h1>
+                Platform/
+                <span>Mesh4x</span>
+              </h1>
+              <p>Mesh4X is a set of libraries, services and applications that allow data to be synchronized across multiple applications, databases and files.</p>
+            </div>
+          </div>
+          <div class='row-fluid'>
+            <div class='span12'>
+              <div id='platform'></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class='footer'>
+        <div class='container-fluid'>
+          <div class='row-fluid top'>
+            <div class='span5'>
+              <img alt="Insteddplatform" src="images/InSTEDDPlatform.png" title="InSTEDD Platform" vspace="7" />
+              <br>
+              InSTEDD has created an evolving platform of free and open source technologies to support humanitarian causes. These tools can be used individually or as building blocks for larger solutions.
+              <a href='http://instedd.org/technologies/'>Click here</a>
+              to learn more
+            </div>
+            <div class='span7'>
+              <a class='more pull-right' href='http://instedd.org/technologies/'>Learn more</a>
+              <br>
+            </div>
+          </div>
+          <div class='row-fluid'>
+            <div class='span4'>
+              <a href='http://instedd.org'>&copy; 2014 InSTEDD</a>
+              <!-- <a href='#'>Terms and conditions</a> -->
+              <a href='mailto:support@instedd.org'>Contact us</a>
+            </div>
+            <div class='span6 offset2 aright'>
+<!--               <a href='#'>Events</a>
+              <a href='#'>Volunteers</a>
+              <a href='#'>Members</a>
+              <span id='version'>
+                Version:
+                development
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+/* styles */
+
+@font-face {
+  font-family: 'TheSansPlain';
+  src: url(../fonts/thesansp-webfont.eot);
+  src: url(../fonts/thesansp-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/thesansp-webfont.woff) format("woff"), url(../fonts/thesansp-webfont.ttf) format("truetype"), url(../fonts/thesansp-webfont.svg#clarendon_btbold) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TheSansBlack';
+  src: url(../fonts/thesanbp-webfont.eot);
+  src: url(../fonts/thesanbp-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/thesanbp-webfont.woff) format("woff"), url(../fonts/thesanbp-webfont.ttf) format("truetype"), url(../fonts/thesanbp-webfont.svg#clarendon_btroman) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: url("../images/backbody.png") repeat-x top;
+  height: 100%;
+  font-size: 0.85em;
+}
+body.smallfooter .content {
+  padding-bottom: 5em;
+}
+body.smallfooter .footer .top {
+  display: none;
+}
+body.smallfooter .footer .row-fluid {
+  border-top: none;
+}
+body.noheader {
+  background: none;
+}
+body.noheader .navbar.top {
+  display: none;
+}
+body.centred .navbar.top,
+body.centred .app-header,
+body.centred .content,
+body.centred .footer .container-fluid {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.app-header {
+  background: url("../images/shadow.png") no-repeat center bottom;
+  padding: 1em 0 2em;
+  height: 60px;
+}
+
+.content {
+  padding-top: 1em;
+  padding-bottom: 14em;
+}
+
+.homepage {
+  text-align: center;
+}
+.homepage .row-fluid {
+  margin-bottom: 20px;
+}
+.homepage h1 {
+  font-family: TheSansBlack, Arial, Helvetica, sans-serif;
+  font-size: 46px;
+  font-weight: normal;
+  line-height: 47px;
+  color: #ff6600;
+  margin: 10px 0;
+}
+.homepage h1 small {
+  font-family: TheSansPlain, Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  color: inherit;
+  line-height: 24px;
+  margin-bottom: 18px;
+  margin-top: 10px;
+  display: block;
+}
+.homepage .main-img {
+  margin-top: 50px;
+}
+.homepage .onepager {
+  text-align: right;
+  padding-top: 40px;
+}
+.homepage .onepager a {
+  color: #555555 !important;
+}
+
+.btn-icon {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 9px 6px rgba(255, 255, 255, 0.65), 0 1px 3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 9px 6px rgba(255, 255, 255, 0.65), 0 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 9px 6px rgba(255, 255, 255, 0.65), 0 1px 3px rgba(0, 0, 0, 0.5);
+  background-color: #e0e0e0;
+  background-image: -moz-linear-gradient(top, #f1f1f1, #c8c8c8);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f1f1f1), to(#c8c8c8));
+  background-image: -webkit-linear-gradient(top, #f1f1f1, #c8c8c8);
+  background-image: -o-linear-gradient(top, #f1f1f1, #c8c8c8);
+  background-image: linear-gradient(to bottom, #f1f1f1, #c8c8c8);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF1F1F1', endColorstr='#FFC8C8C8', GradientType=0);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.icf-pdf {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: text-top;
+  background: url("../images/ic-pdf.png") no-repeat center top;
+}
+
+#platform {
+  margin: 10px auto;
+  width: 600px;
+  height: 600px;
+}
+#platform .label {
+  background: none;
+  font-size: 12px;
+  text-align: center;
+  color: #555555;
+  margin: 0;
+  text-shadow: none;
+  white-space: normal;
+}
+#platform .enabled {
+  stroke: #555555;
+}
+#platform .disabled {
+  stroke: #cccccc;
+}
+#platform g[data-type="app"] {
+  -webkit-transition: opacity ease-out 0.2s;
+  -moz-transition: opacity ease-out 0.2s;
+  -o-transition: opacity ease-out 0.2s;
+  transition: opacity ease-out 0.2s;
+}
+
+.cases > div {
+  display: none;
+  min-height: 150px;
+}
+.cases > div:first-child {
+  display: block;
+}
+.cases > div h1 {
+  color: #999999;
+}
+.cases > div h1 span {
+  color: #000000;
+}
+
+.footer {
+  font-size: .9em;
+  color: #777777;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  border-top: 1px solid #CCCCCC;
+  padding-top: .4em;
+  background-color: #ececec;
+  background-image: -moz-linear-gradient(top, #fefefe, #d2d2d2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fefefe), to(#d2d2d2));
+  background-image: -webkit-linear-gradient(top, #fefefe, #d2d2d2);
+  background-image: -o-linear-gradient(top, #fefefe, #d2d2d2);
+  background-image: linear-gradient(to bottom, #fefefe, #d2d2d2);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFEFEFE', endColorstr='#FFD2D2D2', GradientType=0);
+}
+.footer .container-fluid {
+  background: url("../images/shadow.png") no-repeat center top;
+}
+.footer .container-fluid .row-fluid {
+  border-top: 1px solid #F0F0F0;
+  padding-top: .7em;
+}
+.footer .container-fluid .row-fluid.top {
+  padding: .4em 0 .5em;
+  border-bottom: 1px solid #D0D0D0;
+  border-top: none;
+}
+.footer a {
+  color: #777777;
+  text-decoration: none;
+  margin: 0 2px;
+}
+.footer a:hover {
+  color: black;
+}
+
+.footer #instedd-footer .tool-name {
+  display: none;
+}
+
+.button-icon {
+  text-decoration: none !important;
+}
+
+.button-icon span {
+  display: inline-block;
+  vertical-align: middle;
+}
