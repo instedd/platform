@@ -85,7 +85,7 @@ function PlatformVisualization(apps, cases, container) {
       label.setAttribute("height", size);
       var p = document.createElement("p");
       p.setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
-      p.className = "label";
+      p.className = "applabel";
       p.textContent = item.name;
       label.appendChild(p);
       icon.appendChild(label);
