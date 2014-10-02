@@ -20,10 +20,14 @@
   <script>
     var platform, tooltip, container;
 
+
     var showApp = function(e) {
       if (e.info.type == 'app') {
         $('.cases div').hide();
         $('#id' + e.info.id).show();
+      }
+      else if (e.info.type == 'relation') {
+        showTooltip(e.info);
       }
     };
 
@@ -53,9 +57,40 @@
       ];
       container = document.getElementById("platform");
       platform = new PlatformVisualization(apps, cases, container);
+      platform.addEventListener("mouseout", hideTooltip);
       platform.addEventListener("click", showApp);
       window.platform = platform;
+      tooltip = document.createElement("div");
+      tooltip.className = "rel-tooltip";
     };
+
+
+    function hideTooltip() {
+      if(tooltip.parentNode) {
+        tooltip.parentNode.removeChild(tooltip);
+      }
+    }
+
+    function showTooltip(info) {
+      document.body.appendChild(tooltip);
+      var data = "";
+      for (var key in info) {
+        data += key + ": " + info[key] + "<br>";
+      }
+      tooltip.innerHTML = data;
+      var x = container.offsetLeft + info.x - tooltip.offsetWidth / 2;
+      tooltip.style.left = Math.max(10, Math.min(window.screen.availWidth - tooltip.offsetWidth - 20, x)) + "px";
+      var y = container.offsetTop + info.y - tooltip.offsetHeight - 30;
+      if(y < 10) {
+        y = (container.offsetTop + info.y + 50);
+      }
+      tooltip.style.top = y + "px";
+    }
+
+    function showCase(id) {
+      platform.showCase(id);
+    }
+
   </script>
 
   <body class='smallfooter noheader centred'>
@@ -117,14 +152,14 @@
             <div class='row-fluid main-img'>
               <div class='span12'></div>
               <img alt="Main home" src="images/main-home.png" />
-              <div class='onepager'>
+<!--               <div class='onepager'>
                 <a class="button-icon " href="OnePager.pdf" target="_blank">
                   <span class='btn-icon'>
                         <i class='icf-pdf'></i>
                   </span>
                   <span>Download One-Pager pdf (1.15 MB)</span>
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
           <br>

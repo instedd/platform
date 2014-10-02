@@ -132,12 +132,12 @@ body.centred .footer .container-fluid {
 
 #platform {
   margin: 10px auto;
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
 }
-#platform .label {
-  background: none;
+#platform .applabel {
   font-size: 12px;
+  line-height: 12px;
   text-align: center;
   color: #555555;
   margin: 0;
@@ -159,7 +159,7 @@ body.centred .footer .container-fluid {
 
 .cases > div {
   display: none;
-  min-height: 150px;
+  min-height: 110px;
 }
 .cases > div:first-child {
   display: block;
@@ -220,4 +220,49 @@ body.centred .footer .container-fluid {
 .button-icon span {
   display: inline-block;
   vertical-align: middle;
+}
+
+.rel-tooltip {
+  padding: 10px;
+  position:absolute;
+  font-family: Arial;
+  font-size: 12px;
+  color: #555555;
+  margin:0;
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+  pointer-events:none;
+
+}
+.rel-tooltip:before {
+  content: '';
+  display: table;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 14px 0 14px;
+  border-color: #000000 transparent transparent transparent;
+  position: absolute;
+  left: 50%;
+  margin-left: -14px;
+  bottom: -10px;
+  opacity: .1;
+}
+.rel-tooltip:after {
+  content: '';
+  display: table;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 10px 0 10px;
+  border-color: #ffffff transparent transparent transparent;
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  bottom: -6px;
+
 }
