@@ -45,15 +45,12 @@
         {id:10, name:"Riff", icon:"images/riff.png"},
         {id:11, name:"Reporting Wheel", icon:"images/reporting_wheel.png"},
         {id:12, name:"GeoChat", icon:"images/geochat.png"},
-        {id:13, name:"Mesh4x", icon:"images/mesh4x.png"}
+        {id:13, name:"Mesh4x", icon:"images/mesh4x.png"},
+        {id:14, name:"mBuilder", icon:"images/mbuilder.png"}
       ];
       var cases = [
-        {id:1, relations:[{a:13, b:1}, {a:1, b:9}, {a:7, b:9}]},
-        {id:2, relations:[{a:1, b:4}, {a:1, b:9}, {a:10, b:13}, {a:5, b:7}, {a:7, b:10}, {a:1, b:13}, {a:1, b:9}, {a:1, b:9}]},
-        {id:3, relations:[{a:4, b:9}, {a:6, b:9}]},
-        {id:4, relations:[{a:2, b:3}, {a:3, b:10}, {a:10, b:13}, {a:2, b:10}]},
-        {id:5, relations:[{a:10, b:13}, {a:2, b:10}]},
-        {id:6, relations:[{a:2, b:8},{a:2, b:9}]}
+        {id:1, relations:[{a:1, b:2}, {a:1, b:3}, {a:1, b:4}, {a:1, b:5}, {a:1, b:7}, {a:1, b:8}, {a:1, b:9}, {a:1, b:10}, {a:1, b:11}, {a:1, b:12}, {a:1, b:13}, {a:1, b:14}]},
+        {id:7, relations:[{a:7, b:8}, {a:7, b:14}]}
       ];
       container = document.getElementById("platform");
       platform = new PlatformVisualization(apps, cases, container);
